@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 18, 2015 at 08:14 PM
+-- Generation Time: Dec 18, 2015 at 11:47 PM
 -- Server version: 5.5.34
 -- PHP Version: 5.4.22
 
@@ -36,7 +36,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `verified` varchar(5) DEFAULT 'NO',
   `registered_on` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=28 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=38 ;
 
 --
 -- Dumping data for table `users`
@@ -68,7 +68,17 @@ INSERT INTO `users` (`id`, `name`, `mobile_number`, `password`, `otp`, `expirati
 (24, 'heyyyy', '999', 'lol', 2937, '1450465130', 'NO', '19/12/2015 12:23:50am'),
 (25, 'fella', '420', 'aaa', 4155, '1450465201', 'YES', '19/12/2015 12:25:01am'),
 (26, 'game', '9874561230', 'jhgh', 7033, '1450465534', 'NO', '19/12/2015 12:30:34am'),
-(27, 'ggigigiuguubnu', '75567576', 'huho', 2282, '1450465572', 'YES', '19/12/2015 12:31:12am');
+(27, 'ggigigiuguubnu', '75567576', 'huho', 2282, '1450465572', 'YES', '19/12/2015 12:31:12am'),
+(28, 'hgjdghkm', '588657', 'hjm', 3556, '1450469766', 'YES', '19/12/2015 01:41:06am'),
+(29, 'test1', '789456', 'testpass', 9316, '1450472473', 'YES', '19/12/2015 02:26:13am'),
+(30, 'test2', '102030', 'testpass', 8412, '1450472925', 'NO', '19/12/2015 02:33:45am'),
+(31, 'test3', '9477589925', 'sd', 8902, '1450473008', 'YES', '19/12/2015 02:35:08am'),
+(32, 'intelligent', '333', '44dsd', 8126, '1450476419', 'YES', '19/12/2015 03:31:59am'),
+(33, 'hi5', '555', 'h5', 9721, '1450476594', 'YES', '19/12/2015 03:34:54am'),
+(34, 'five min', '000', 'f5', 5450, '1450476695', 'NO', '19/12/2015 03:36:35am'),
+(35, 'someone', '159', 'one', 4104, '1450476794', 'YES', '19/12/2015 03:38:14am'),
+(36, 'taxi number', '9211', 'film', 4543, '1450477395', 'YES', '19/12/2015 03:48:15am'),
+(37, 'taxi number', '9211', 'ss', 9356, '1450478415', 'NO', '19/12/2015 04:05:15am');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
