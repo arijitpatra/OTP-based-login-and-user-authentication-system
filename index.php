@@ -1,3 +1,11 @@
+<?php 
+session_start();
+?>
+
+<?php
+session_unset();  
+?>
+
 <!DOCTYPE html>
 <head>
     <title>Mobile Number</title>

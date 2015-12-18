@@ -26,12 +26,13 @@ if(isset($_POST['verify'])) {
     
     if(time() < $_SESSION["extime"]) {
         if($otpcheck == $_SESSION["otp"]) {
-            echo 'Correct OTP'; //take to successful page
+            //echo 'Correct OTP'; //take to successful page
             //then set verified YES
             $mob = $_SESSION["mobile"];
             $otpquery = $_SESSION["otp"];
             $query = "UPDATE users SET verified = 'YES' WHERE mobile_number = $mob AND otp = $otpquery";
             mysqli_query($dbconnection, $query);
+            header('location: success.php');
         }
         else {
             echo 'Wrong OTP';

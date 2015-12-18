@@ -15,7 +15,8 @@ if (!$dbconnection) {
 }
 
 $name = mysqli_real_escape_string($dbconnection, $_POST['name']);
-$mobile = mysqli_real_escape_string($dbconnection, $_POST['mobile']);
+//$mobile = mysqli_real_escape_string($dbconnection, $_POST['mobile']);
+$mobile = $_SESSION["mobile"];
 $password = mysqli_real_escape_string($dbconnection, $_POST['pass']);
 
 date_default_timezone_set("Asia/Calcutta");
@@ -29,6 +30,7 @@ $exp_time = $curr_time + (5*60);         // 5 times 60 seconds gives me 5 minute
 
 $otp= mt_rand(1000, 9999);               // setting min 1000 max 9999 , mt_rand() is better and faster than rand()
 //echo "OTP is: $otp \n";                  // store this is otp column in database for the new user
+
 
 
 $query = "INSERT INTO users (name, mobile_number, password, registered_on, otp, expiration_date) VALUES ('$name', '$mobile', '$password', '$registeredon', '$otp', '$exp_time')";
