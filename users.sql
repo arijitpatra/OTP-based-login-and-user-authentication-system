@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 18, 2015 at 11:47 PM
+-- Generation Time: Dec 19, 2015 at 08:34 AM
 -- Server version: 5.5.34
 -- PHP Version: 5.4.22
 
@@ -36,7 +36,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `verified` varchar(5) DEFAULT 'NO',
   `registered_on` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=38 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=45 ;
 
 --
 -- Dumping data for table `users`
@@ -78,7 +78,14 @@ INSERT INTO `users` (`id`, `name`, `mobile_number`, `password`, `otp`, `expirati
 (34, 'five min', '000', 'f5', 5450, '1450476695', 'NO', '19/12/2015 03:36:35am'),
 (35, 'someone', '159', 'one', 4104, '1450476794', 'YES', '19/12/2015 03:38:14am'),
 (36, 'taxi number', '9211', 'film', 4543, '1450477395', 'YES', '19/12/2015 03:48:15am'),
-(37, 'taxi number', '9211', 'ss', 9356, '1450478415', 'NO', '19/12/2015 04:05:15am');
+(37, 'taxi number', '9211', 'ss', 9356, '1450478415', 'NO', '19/12/2015 04:05:15am'),
+(38, 'checker', '158', 'fgh', 5031, '1450499599', 'YES', '19/12/2015 09:58:19am'),
+(39, 'xyz', '157', 'lol', 3867, '1450499841', 'NO', '19/12/2015 10:02:21am'),
+(40, 'ooo', '222', 'qwe', 1398, '1450503037', 'NO', '19/12/2015 10:55:37am'),
+(41, 'hgg', '699', 'hoy', 9647, '1450503179', 'YES', '19/12/2015 10:57:59am'),
+(42, 'nmbb', '753', 'joy', 7606, '1450503237', 'YES', '19/12/2015 10:58:57am'),
+(43, 'ss', '9830012345', 'sda', 7122, '1450510089', 'YES', '19/12/2015 12:53:09pm'),
+(44, 'airtel', '9831112345', 'portal', 8703, '1450510303', 'YES', '19/12/2015 12:56:43pm');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
