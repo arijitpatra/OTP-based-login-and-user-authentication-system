@@ -1,0 +1,66 @@
+* {
+    font-family: 'Open Sans', sans-serif;
+} 
+
+.task-input-box {
+    width: 200px;
+    height: 20px;
+    padding: 5px;
+}
+
+.task-form-fields {
+    width: 200px;
+    //height: 20px;
+    padding: 5px;
+}
+
+.task-click-btn {
+    background-color: #56c56d; 
+    color: white;
+    width: 65px;
+    height: 35px;
+    padding: 2px;
+    border: 3px solid #7cd08e;
+    float: right;
+    cursor: pointer;
+}
+
+.task-center {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    //width: 30em;
+    //height: 18em;
+    margin-top: -5em;
+    margin-left: -7em;
+}
+
+.task-login-center {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    //width: 30em;
+    //height: 18em;
+    margin-top: -9em;
+    margin-left: -7em;
+}
+
+.task-messages {
+    font-size: 12px;
+}
+
+.task-success-msg {
+    font-size: 20px;
+    color: green;
+}
+
+.task-otp-unit {
+    width: 50px;
+    height: 50px;
+    padding: 13px;
+    font-size: 35px;
+}
+
+.task-textalign-center {
+    text-align: center;
+}

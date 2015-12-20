@@ -9,15 +9,19 @@ session_unset();
 <!DOCTYPE html>
 <head>
     <title>Mobile Number</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/task.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 </head>
 <body>
-    <form onsubmit="return length_check()" action="checkexisting.php" method="POST">
-        <table>
-            <tr><td><input type="text" id="mobile" onkeyup="maxlength_validate()" name="mobile" maxlength="10" placeholder="mobile number" required></td></tr>
-            <tr><td style="float: right"><input style="background-color: green; color: white;" type="submit" name="next" value="next"></td></tr>
-        </table>
-    </form>
-    <p id="message"></p>
+    <div class="task-center">
+        <form onsubmit="return length_check()" action="checkexisting.php" method="POST">
+            <table>
+                <tr><td><input type="text" class="task-input-box" id="mobile" onkeyup="maxlength_validate()" name="mobile" maxlength="10" placeholder="mobile number" required></td></tr>
+                <tr><td><input type="submit" class="task-click-btn" name="next" value="next"></td></tr>
+            </table>
+        </form>
+        <p class="task-textalign-center"><span id="message" class="task-messages"></span></p>
+    </div>
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script> 
     <script type="text/javascript">
         var matchNumber = /^[0-9]*$/;
@@ -52,10 +56,10 @@ session_unset();
             //var temp = document.getElementById("mobile").value;
             if(mobile.value.length === 10) {                
                 //return true;
-                message.innerHTML = "good!";                
+                message.innerHTML = "Perfect! Click 'next' to proceed...";                
             }
             else {
-                message.innerHTML = "number is less than 10 digits, enter 10 digits!";
+                message.innerHTML = "Number is less than 10 digits!";
                 //return false;
                 //alert("less than 10 digit");
             }
@@ -67,7 +71,7 @@ session_unset();
                 return true;                
             }
             else {
-                message.innerHTML = "number is less than 10 digits, enter 10 digits!";
+                message.innerHTML = "Number is less than 10 digits!";
                 return false;
                 //alert("less than 10 digit");
             }

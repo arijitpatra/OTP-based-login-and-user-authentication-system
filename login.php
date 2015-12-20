@@ -4,47 +4,59 @@ session_start();
 <html>
     <head>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="assets/css/task.css">
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
     </head>
-</html>
-<?php
-$servername = "localhost";
-$username = "root";
-//$password = "password";
-$dbname = "record";
+    <body>
+        <div class="task-login-center">
+            <p class="task-textalign-center">
+                <span class="fa-stack fa-lg" style="font-size: 50px">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-user fa-stack-1x fa-inverse" ></i>
+                </span>
+                <br>
+                <span class="task-message"><?php echo $_SESSION["name"] ?></span>
+            </p>
 
-$dbconnection = mysqli_connect($servername, $username, "", $dbname);
+            <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="POST">
+                <table>
+                    <tr><td><input class="task-form-fields" type="password" name="passcheck" placeholder="password"></td></tr>
+                    <tr><td><input class="task-click-btn" type="submit" name="login" value="login"></td></tr>
+                </table>
+            </form>
 
-if (!$dbconnection) {
-    die("Database Connection Failed " . mysqli_connect_error());
-}
+            <?php
+    $servername = "localhost";
+    $username = "root";
+    //$password = "password";
+    $dbname = "record";
 
-        if(isset($_POST['login'])){
-            $passcheck = mysqli_real_escape_string($dbconnection, $_POST['passcheck']); 
-            
-            //echo $passcheck;
-            //echo $_SESSION["password"];
+    $dbconnection = mysqli_connect($servername, $username, "", $dbname);
 
-            if($passcheck == $_SESSION["pass"])   {      //need to unset the session
-                //echo "OK";
-                //echo $_SESSION["mobile"]." ".$_SESSION["user"]." ".$_SESSION["password"];
-                header('location: success.php');
+    if (!$dbconnection) {
+        die("Database Connection Failed " . mysqli_connect_error());
+    }
+
+            if(isset($_POST['login'])){
+                $passcheck = mysqli_real_escape_string($dbconnection, $_POST['passcheck']); 
+
+                //echo $passcheck;
+                //echo $_SESSION["password"];
+
+                if($passcheck == $_SESSION["pass"])   {      //need to unset the session
+                    //echo "OK";
+                    //echo $_SESSION["mobile"]." ".$_SESSION["user"]." ".$_SESSION["password"];
+                    header('location: success.php');
+                }
+                else {
+                    echo '<p class="task-textalign-center"><span class="task-messages">Wrong Password</span></p>';
+                }
             }
-            else
-                echo "NOT OK";
-        }
 
-?>
-        <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="POST">
-            <table>
-                <!--<tr><td><span><i class="fa fa-user" style="font-size: 100px"></i></span></td></tr>-->
-                <tr><td><span class="fa-stack fa-lg" style="font-size: 100px"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-user fa-stack-1x fa-inverse" ></i></span></td></tr>
-                <tr><td><?php echo $_SESSION["name"] ?></td></tr>
-                <tr><td><input type="password" name="passcheck" placeholder="password"></td></tr>
-                <tr><td style="float: right"><input style="background-color: green; color: white;" type="submit" name="login" value="login"></td></tr>
-            </table>
-        </form>
-        
-<?php
-        
+    ?>
+    </div>
+    </body>    
+</html>    
+<?php      
 mysqli_close($dbconnection);
 ?>
