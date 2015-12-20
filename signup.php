@@ -33,21 +33,6 @@ session_start();
 
         password.onchange = validatePassword;
         confirm_password.onkeyup = validatePassword;
-        
-        var matchNumber = /^[0-9]*$/;
-        var numberLength = /^d{10}$/;
-        
-        $("#mobile")
-            .data("oldValue", '')
-            .bind('input propertychange', function () {
-                var $this = $(this);
-                var newValue = $this.val();
-                if (!matchNumber.test(newValue))
-                    return($this.val($this.data('oldValue')));
-
-                if (!numberLength.test(newValue))
-                    return $this.data('oldValue', newValue);
-        });
     </script>
 </body>
 </html>

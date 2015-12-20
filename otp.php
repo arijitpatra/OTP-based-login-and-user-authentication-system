@@ -9,12 +9,12 @@ session_start();
     </head>
     <body>
         <div class="task-center">
-            <p class="task-textalign-center"><span class="task-messages"><?php echo "YOUR OTP: ".$_SESSION["otp"]; ?></span></p>
-            <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="POST">
+            <p id="otp-four-digit" class="task-textalign-center"><span class="task-messages"><?php echo "YOUR OTP: ".$_SESSION["otp"]; ?></span></p>
+            <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="POST" id="otp-form">
                 <table>
                     <tr>
                         <td>
-                            <input class="task-otp-unit" type="text" maxlength="1" name="one" required>
+                            <input class="task-otp-unit" type="text" maxlength="1" name="one" required autofocus>
                             <input class="task-otp-unit" type="text" maxlength="1" name="two" required>
                             <input class="task-otp-unit" type="text" maxlength="1" name="three" required>
                             <input class="task-otp-unit" type="text" maxlength="1" name="four" required>
@@ -55,8 +55,6 @@ if(isset($_POST['verify'])) {
             $query = "UPDATE users SET verified = 'YES' WHERE mobile_number = $mob AND otp = $otpquery";
             mysqli_query($dbconnection, $query);
             header('location: success.php');
-            session_unset();
-            session_destroy();
         }
         else {
             ?>
@@ -66,9 +64,8 @@ if(isset($_POST['verify'])) {
         }
     }
     else {
-        session_unset();
-        session_destroy();
         echo '<p class="task-textalign-center"><span class="task-messages">OTP Invalid or Timed Out</span></p>';
+        echo '<script type="text/javascript">document.getElementById("otp-form").style.display="none";document.getElementById("otp-four-digit").style.display="none";</script>';
     }
     
 }
