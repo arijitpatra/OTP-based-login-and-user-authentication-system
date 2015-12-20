@@ -1,9 +1,9 @@
-<?php 
-session_start();
-?>
-
 <?php
-session_unset();  
+session_start();
+if(isset($_SESSION['loginsuccess']) == true)
+    header("location: success.php");
+else if(isset($_SESSION['loggedin']) == true)
+    header("location: login.php");
 ?>
 
 <!DOCTYPE html>
@@ -16,7 +16,7 @@ session_unset();
     <div class="task-center">
         <form onsubmit="return length_check()" action="checkexisting.php" method="POST">
             <table>
-                <tr><td><input type="text" class="task-input-box" id="mobile" onkeyup="maxlength_validate()" name="mobile" maxlength="10" placeholder="mobile number" required></td></tr>
+                <tr><td><input type="text" class="task-input-box" id="mobile" onkeyup="maxlength_validate()" name="mobile" maxlength="10" placeholder="mobile number" required autofocus></td></tr>
                 <tr><td><input type="submit" class="task-click-btn" name="next" value="next"></td></tr>
             </table>
         </form>

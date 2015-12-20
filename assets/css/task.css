@@ -4,23 +4,22 @@
 
 .task-input-box {
     width: 200px;
-    height: 20px;
+    height: 25px;
     padding: 5px;
 }
 
 .task-form-fields {
     width: 200px;
-    //height: 20px;
     padding: 5px;
 }
 
 .task-click-btn {
-    background-color: #56c56d; 
+    background-color: #4abd61;
     color: white;
     width: 65px;
     height: 35px;
     padding: 2px;
-    border: 3px solid #7cd08e;
+    border: 3px solid #56c56d;
     float: right;
     cursor: pointer;
 }
@@ -63,4 +62,12 @@
 
 .task-textalign-center {
     text-align: center;
+}
+
+.task-success-icon {
+    font-size: 100px;
+}
+
+.task-user-icon {
+    font-size: 50px;
 }

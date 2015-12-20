@@ -1,5 +1,7 @@
-<?php 
+<?php
 session_start();
+if((isset($_SESSION['loginsuccess']) == true))
+    header("location: success.php");
 ?>
 <html>
     <head>
@@ -10,7 +12,7 @@ session_start();
     <body>
         <div class="task-login-center">
             <p class="task-textalign-center">
-                <span class="fa-stack fa-lg" style="font-size: 50px">
+                <span class="fa-stack fa-lg task-user-icon">
                     <i class="fa fa-circle fa-stack-2x"></i>
                     <i class="fa fa-user fa-stack-1x fa-inverse" ></i>
                 </span>
@@ -18,45 +20,40 @@ session_start();
                 <span class="task-message"><?php echo $_SESSION["name"] ?></span>
             </p>
 
-            <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="POST">
+            <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
                 <table>
-                    <tr><td><input class="task-form-fields" type="password" name="passcheck" placeholder="password"></td></tr>
+                    <tr><td><input class="task-form-fields" type="password" name="passcheck" placeholder="password" required autofocus></td></tr>
                     <tr><td><input class="task-click-btn" type="submit" name="login" value="login"></td></tr>
                 </table>
             </form>
 
             <?php
-    $servername = "localhost";
-    $username = "root";
-    //$password = "password";
-    $dbname = "record";
+            $servername = "localhost";
+            $username = "root";
+            //$password = "password";
+            $dbname = "record";
 
-    $dbconnection = mysqli_connect($servername, $username, "", $dbname);
+            $dbconnection = mysqli_connect($servername, $username, "", $dbname);
 
-    if (!$dbconnection) {
-        die("Database Connection Failed " . mysqli_connect_error());
-    }
+            if (!$dbconnection) {
+                die("Database Connection Failed " . mysqli_connect_error());
+            }
 
-            if(isset($_POST['login'])){
-                $passcheck = mysqli_real_escape_string($dbconnection, $_POST['passcheck']); 
+            if (isset($_POST['login'])) {
+                $passcheck = mysqli_real_escape_string($dbconnection, $_POST['passcheck']);
 
-                //echo $passcheck;
-                //echo $_SESSION["password"];
-
-                if($passcheck == $_SESSION["pass"])   {      //need to unset the session
-                    //echo "OK";
-                    //echo $_SESSION["mobile"]." ".$_SESSION["user"]." ".$_SESSION["password"];
+                if ($passcheck == $_SESSION["pass"]) {
+                    $_SESSION['loginsuccess'] = true;
                     header('location: success.php');
-                }
-                else {
+                } else {
                     echo '<p class="task-textalign-center"><span class="task-messages">Wrong Password</span></p>';
                 }
             }
-
-    ?>
-    </div>
+            ?>
+        </div>
     </body>    
 </html>    
-<?php      
+
+<?php
 mysqli_close($dbconnection);
 ?>

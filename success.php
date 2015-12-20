@@ -1,5 +1,7 @@
-<?php 
+<?php
 session_start();
+if(!(isset($_SESSION['loginsuccess']) == true))
+    header("location: index.php");
 ?>
 <html>
     <head>
@@ -11,12 +13,11 @@ session_start();
     <body>
         <div class="task-center">
             <p class="task-textalign-center">
-                <span><i class="fa fa-smile-o" style="font-size: 100px"></i></span>
+                <span><i class="fa fa-smile-o task-success-icon"></i></span>
             </p>
             <p class="task-textalign-center">
                 <span class="task-success-msg">successfully logged in</span>
             </p>
-            <?php //echo $_SESSION["mobile"]." ".$_SESSION["name"]." ".$_SESSION["pass"]; ?>
         </div>
     </body>
 </html>
