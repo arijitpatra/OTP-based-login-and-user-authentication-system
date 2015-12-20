@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 20, 2015 at 11:06 AM
+-- Generation Time: Dec 20, 2015 at 11:22 AM
 -- Server version: 5.5.34
 -- PHP Version: 5.4.22
 
@@ -36,7 +36,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `verified` varchar(5) DEFAULT 'NO',
   `registered_on` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=43 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=45 ;
 
 --
 -- Dumping data for table `users`
@@ -47,7 +47,9 @@ INSERT INTO `users` (`id`, `name`, `mobile_number`, `password`, `otp`, `expirati
 (2, 'perfect number', '9874563210', '123', 7767, '1450511343', 'NO', '19/12/2015 01:14:03pm'),
 (40, 'num one', '8974258689', 'xyz', 7660, '1450606103', 'YES', '20/12/2015 03:33:23pm'),
 (41, 'hello mobile', '7589631426', 'asd', 8489, '1450606173', 'NO', '20/12/2015 03:34:33pm'),
-(42, 'Xyz Abc', '9632587410', 'abcxyz', 1551, '1450606226', 'YES', '20/12/2015 03:35:26pm');
+(42, 'Xyz Abc', '9632587410', 'abcxyz', 1551, '1450606226', 'YES', '20/12/2015 03:35:26pm'),
+(43, 'Cell One', '9494949494', 'bsnl', 1726, '1450606751', 'NO', '20/12/2015 03:44:11pm'),
+(44, 'Vodafone Network', '9830012345', 'voda', 9175, '1450606916', 'YES', '20/12/2015 03:46:56pm');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
