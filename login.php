@@ -17,7 +17,7 @@ if((isset($_SESSION['loginsuccess']) == true))
                     <i class="fa fa-user fa-stack-1x fa-inverse" ></i>
                 </span>
                 <br>
-                <span class="task-message"><?php echo $_SESSION["name"] ?></span>
+                 <span class="task-message" action="<?php echo $_SESSION["name"]; ?>"></span>
             </p>
 
             <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
